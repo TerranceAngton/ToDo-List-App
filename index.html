@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>To-Do List</h1>
+
+    <div class="controls-row">
+      <div class="input-row">
+        <input id="taskInput" type="text" placeholder="Add a task..." />
+        <input id="taskDate" type="date" />
+        <select id="taskPriority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        <button id="addBtn">Add</button>
+      </div>
+
+      <div class="actions-row">
+        <label for="sortSelect">Sort:</label>
+        <select id="sortSelect">
+          <option value="newest">Newest</option>
+          <option value="date-asc">Date ↑</option>
+          <option value="date-desc">Date ↓</option>
+          <option value="priority">Priority (High → Low)</option>
+        </select>
+        <button id="clearCompleted">Clear Completed</button>
+      </div>
+    </div>
+
+    <ul id="taskList" class="task-list"></ul>
+  </div>
+
+  <!-- Edit modal (hidden by default) -->
+  <div id="editModal" class="modal hidden" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <h3>Edit task</h3>
+      <input id="editText" type="text" />
+      <input id="editDate" type="date" />
+      <select id="editPriority">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+      <div class="modal-actions">
+        <button id="saveEdit">Save</button>
+        <button id="cancelEdit">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
